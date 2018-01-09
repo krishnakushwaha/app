@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body class="container" ng-app="appList">
+
+<h1>Working fine</h1>
+<div ng-controller="contactCtrl">
+
+<input type="button" name="" ng-click="listContact()" value="get contactList">
+
+<table class="table">
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Mobile number</th>
+<th>Action</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody >
+<tr>
+	<td><input class="form-control" ng-model="name"></td>
+	<td><input class="form-control" ng-model="email"></td>
+	<td><input class="form-control" ng-model="phone"></td>
+	<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+	<td><button class="btn btn-info" ng-click="update()">Update</button></td>
+</tr>
+<tr ng-repeat="obj in setcontact">
+<td>{{obj.name}}</td>
+<td>{{obj.email}}</td>
+<td>{{obj.phone}}</td>
+<td><button class="btn btn-danger" ng-click="remove(obj.id)">Remove</button></td>
+<td><button class="btn btn-warning" ng-click="edit(obj.id)">Edit</button></td>
+</tr>
+</tbody>
+
+
+
+</table>
+</div>
+
+</body>
+
+
+</html>
